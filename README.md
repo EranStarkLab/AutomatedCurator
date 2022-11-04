@@ -17,10 +17,12 @@ The current version works only with data which were recorded at 20kHz and spikes
 
 Installation
 For installing the automated curator you should first create an activate a virtual environment using conda:
+```
 $ conda create --name myenv
 $ conda activate myenv
-
+```
 Next install the FastAi package by following the installation guidelines, and then install the Phylib package with pip
+```
 $  pip install phylib
-
+```
 Lastly, clone this repository to your machine.
