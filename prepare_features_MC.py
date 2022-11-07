@@ -65,15 +65,13 @@ def prepare_features_MC(i, j, clu, mean_spk, std_spk, cc, time_mat, u_clu, k):
     t = get_time_fet(time_mat, i, j)
 
     last_row = np.concatenate((acc1.T, acc2.T, ccgtag.T, np.array([n]), t.flatten()))
+    last_row[0:83]+=-0.5
     x = (np.concatenate((mean_spk1, mean_spk2, std_spk1, std_spk2))) / max1
     x = np.concatenate((x, last_row))
     x = np.reshape(x, (5, 128, 1))
     x = np.moveaxis(x, -1, 0)
 
-    # for xgboost
-    # s = x.shape
-    # x = np.moveaxis(x, -1, 0)
-    # x = np.reshape(x, (s[2], -1), 'F')
+
     return x
 
 
