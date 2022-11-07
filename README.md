@@ -16,10 +16,10 @@ res: spike times in samples
 spk: spike waveforms
 The current version of the AC works only with data which were recorded at 20 kHz, and spike waveforms which are 32 samples long.
 
-Operating system:
+### Operating system:
 The code was tested on machines running Linux (Ubuntu 18), but is expected to work on any OS
 
-Prerequisites
+### Prerequisites
 -	Conda (both Miniconda and Anaconda are fine)
 -	Python>3.6
 
@@ -59,7 +59,7 @@ $ conda activate myenv
 2.	n_shank: shank number
 3.	n_channels: number of channels in the spk file 
 ```
--	$ python running_AI_pipeline_bash.py /filebase/to/session/folder/session_name n_shanks n_channels
+$ python running_AI_pipeline_bash.py /filebase/to/session/folder/session_name n_shanks n_channels
 ```
 
 ## Automated curator output
