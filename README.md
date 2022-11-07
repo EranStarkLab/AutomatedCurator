@@ -65,4 +65,4 @@ $ python running_AI_pipeline_bash.py /filebase/to/session/folder/session_name n_
 ## Automated curator output
 The output of the automated curator is a list of lists. Every list is a recommendation for an action, that can be carried out in the environment of [klusters](https://neurosuite.sourceforge.net/). The first list contains the “Noise/Multi-units”, clusters which are either non-neuronal units or multi-neuronal units which cannot be separated into single units. Every other list contains two or more units which should be merged with one another.
 
-
+![merge](merge.png)
