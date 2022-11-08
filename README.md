@@ -14,6 +14,7 @@ The input for the automated curator should be a dataset in a [neurosuite](https:
 - clu: spike labels, e.g. session_name.clu.1 
 - res: spike times in samples, e.g. session_name.res.1
 - spk: spike waveforms, e.g. session_name.spk.1  
+
 The current version of the AC works only with data which were recorded at 20 kHz, and spike waveforms which are 32 samples long.
 
 ### Operating system:
