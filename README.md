@@ -11,9 +11,9 @@ Here, we set out to develop a fully automated algorithm which can replace manual
 
 Dataset:
 The input for the automated curator should be a dataset in a [neurosuite](https://neurosuite.sourceforge.net/) format (Hazan et al., 2006). Specifically, the following three files are required:
-clu: spike labels
-res: spike times in samples
-spk: spike waveforms
+- clu: spike labels, e.g. session_name.clu.1 
+- res: spike times in samples, e.g. session_name.res.1
+- spk: spike waveforms, e.g. session_name.spk.1
 The current version of the AC works only with data which were recorded at 20 kHz, and spike waveforms which are 32 samples long.
 
 ### Operating system:
@@ -65,14 +65,14 @@ $ cd filebase/to/automated/curator/folder
 $ conda activate myenv
 ```
 -	Run the automated curator script with three inputs:
-1.	Filebase: path to file with session name
-2.	n_shank: shank number
-3.	n_channels: number of channels in the spk file 
+1.	Filebase: full path to session dataset with session name, e.g. ~/home/data/session_name
+2.	shank_number: shank number, e.g. 1
+3.	n_channels: number of channels in the spk file, e.g 10 
 ```
-$ python running_AI_pipeline_bash.py /filebase/to/session/folder/session_name n_shanks n_channels
+$ python running_AI_pipeline_bash.py Filebase n_shanks n_channels
 ```
 
 ## Automated curator output
-The output of the automated curator is a list of lists. Every list is a recommendation for an action, that can be carried out in the environment of [klusters](https://neurosuite.sourceforge.net/). The first list contains the “Noise/Multi-units”, clusters which are either non-neuronal units or multi-neuronal units which cannot be separated into single units. Every other list contains two or more units which should be merged with one another.
+The output of the automated curator is a list of lists. Every list is a recommendation for an action, that can be carried out in the environment of [klusters](https://neurosuite.sourceforge.net/). The first list(index 0) contains the “Noise/Multi-units”, clusters which are either non-neuronal units or multi-neuronal units which cannot be separated into single units. Every other list (index 1-N) contains two or more units which should be merged with one another.
 
 ![merge](merge.png)
