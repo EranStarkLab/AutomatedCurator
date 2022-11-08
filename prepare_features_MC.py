@@ -65,7 +65,6 @@ def prepare_features_MC(i, j, clu, mean_spk, std_spk, cc, time_mat, u_clu, k):
     t = get_time_fet(time_mat, i, j)
 
     last_row = np.concatenate((acc1.T, acc2.T, ccgtag.T, np.array([n]), t.flatten()))
-    last_row[0:83]+=-0.5
     x = (np.concatenate((mean_spk1, mean_spk2, std_spk1, std_spk2))) / max1
     x = np.concatenate((x, last_row))
     x = np.reshape(x, (5, 128, 1))
@@ -93,21 +92,4 @@ def trim_spk_4ch(mean_spk):
     return new_mspk, channels_idx
 
 
-# filebase = '/home/tali/matlab/Database/npy_mP31_07_test'
-# name = 'mP31_07'
-# shank_num = '1'
-# clu = np.load(filebase + '/' + name + '.clu.' + shank_num + '.npy')
-# res = np.load(filebase + '/' + name + '.res.' + shank_num + '.npy')
-# cc = np.load(filebase + '/' + name + '.cc.' + shank_num + '.npy')
-# time_mat = np.load(filebase + '/' + name + '.time_mat.' + shank_num + '.npy')
-# mspk = np.load(filebase + '/' + name + '.mspk.' + shank_num + '.npy')
-# sspk = np.load(filebase + '/' + name + '.sspk.' + shank_num + '.npy')
-# # nspk_vec = np.load(filebase + '/' + name + '.nspk_vec.' + shank_num + '.npy')
-# # nspk_vec = np.squeeze(nspk_vec)
-# u_clu = np.unique(clu)
-# i = 0
-# j = 4
-# x = prepare_features_test(i, j, clu, mspk, sspk, cc, time_mat, u_clu)
-# x2 = np.load('/home/tali/matlab/Database/npy_mP31_07_test/mP31_07.x.1-5.npy')
-# x2 = np.reshape(x2, (1, -1), 'F')
 
