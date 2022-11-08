@@ -29,8 +29,7 @@ For installing the automated curator, first create an activate a virtual environ
 $ conda create --name myenv
 $ conda activate myenv
 ```
-Second, install the [FastAi](https://docs.fast.ai/) package:
-if you are using Miniconda run: 
+Second, install the [FastAi](https://docs.fast.ai/) package, if you are using Miniconda run: 
 ```
 conda install -c fastchan fastai
 ```
