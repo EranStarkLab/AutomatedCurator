@@ -29,7 +29,17 @@ For installing the automated curator, first create an activate a virtual environ
 $ conda create --name myenv
 $ conda activate myenv
 ```
-Second, install the [FastAi](https://docs.fast.ai/) package by following the installation guidelines
+Second, install the [FastAi](https://docs.fast.ai/) package:
+if you are using Miniconda run: 
+```
+conda install -c fastchan fastai
+```
+or if you are using Anaconda then run:
+```
+conda install -c fastchan fastai anaconda
+```
+To install the Fastai package with pip fallow the Fastai installation [guidlines](https://docs.fast.ai/).
+
 Third, install the [Phylib](https://github.com/cortex-lab/phylib) package with pip:
 ```
 $  pip install phylib
