@@ -38,7 +38,6 @@ or if you are using Anaconda then run:
 ```
 conda install -c fastchan fastai anaconda
 ```
-To install the Fastai package with pip fallow the Fastai installation [guidlines](https://docs.fast.ai/).
 
 Third, install the [Phylib](https://github.com/cortex-lab/phylib) package with pip:
 ```
@@ -73,6 +72,6 @@ $ python running_AI_pipeline_bash.py Filebase n_shanks n_channels
 ```
 
 ## Automated curator output
-The output of the automated curator is a list of lists. Every list is a recommendation for an action, that can be carried out in the environment of [klusters](https://neurosuite.sourceforge.net/). The first list(index 0) contains the “Noise/Multi-units”, clusters which are either non-neuronal units or multi-neuronal units which cannot be separated into single units. Every other list (index 1-N) contains two or more units which should be merged with one another.
+The output of the automated curator is a list of lists. Every list is a recommendation for an action, that can be carried out in the environment of [klusters](https://neurosuite.sourceforge.net/). The first list (index 0) contains the “Noise/Multi-units”, clusters which are either non-neuronal units or multi-neuronal units which cannot be separated into single units. Every other list (index 1 and higher) contains two or more units which should be merged with one another.
 
 ![merge](merge.png)
