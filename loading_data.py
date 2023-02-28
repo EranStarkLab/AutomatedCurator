@@ -32,6 +32,7 @@ def make_mSPK(filebase,shank,Nchannels=10):
     
     
     Nsamp              = 32
+    Nvar               = Nsamp*Nchannels
     Nspkblock          = 10000
     Nspk               = len(res)
     vec                = np.append(np.arange(0,Nspk,Nspkblock),Nspk)
@@ -46,8 +47,8 @@ def make_mSPK(filebase,shank,Nchannels=10):
         spk             = np.fromfile(spkFname,dtype=np.int16,count=count,offset=ofset*2)
         spk             = np.reshape(spk,(dif,Nsamp,Nchannels),order='C')
         spk             = np.int64(spk)
-        A               = int(ofset/320)
-        B               = int((ofset+count)/320)
+        A               = int(ofset/Nvar)
+        B               = int((ofset+count)/Nvar)
         clu1            = clu[A:B]
         uclu1           = np.unique(clu1)
         for zz in range(len(uclu1)):
