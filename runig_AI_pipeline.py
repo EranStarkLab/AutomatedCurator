@@ -24,10 +24,11 @@ def getY(item):
 filebase   = '/home/lidor/data/AUSS_project/Automated_curation/test_data/mP31_04'
 shank      = 2
 Nchannels  = 10
+Nsamp      = 32
 
 # Loading data
 clu,res    = load_clures(filebase,shank)
-mspk,sspk  = make_mSPK(filebase,shank,Nchannels=Nchannels)
+mspk,sspk  = make_mSPK(filebase,shank,Nchannels=Nchannels,Nsamp=Nsamp)
 cc         = get_CCmat(filebase,shank)
 u_clu      = np.unique(clu)
 
