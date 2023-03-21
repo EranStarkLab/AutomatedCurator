@@ -24,14 +24,14 @@ def load_clures(filebase,shank):
     return clu,res
 
 
-def make_mSPK(filebase,shank,Nchannels=10):
+def make_mSPK(filebase,shank,Nchannels=10,Nsamp= 32):
     clu,res   = load_clures(filebase,shank)
     shank     = str(shank)
     spk_ex    = '.spk.'
     spkFname  = filebase+spk_ex+shank
     
     
-    Nsamp              = 32
+    
     Nvar               = Nsamp*Nchannels
     Nspkblock          = 10000
     Nspk               = len(res)
